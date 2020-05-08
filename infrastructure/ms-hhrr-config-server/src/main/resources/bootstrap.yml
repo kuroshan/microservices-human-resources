@@ -8,4 +8,5 @@ spring:
           uri: https://github.com/kuroshan/microservices-human-resources
           defaultLabel: develop
           searchPaths: 
-            - config*
+            - config/discovery-server
+            - config/edge-service
