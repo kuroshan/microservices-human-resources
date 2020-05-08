@@ -11,3 +11,4 @@ spring:
             - config/discovery-server
             - config/edge-service
             - config/areas
+            - config/employees
