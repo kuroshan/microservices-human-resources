@@ -6,6 +6,7 @@ import com.kuroshan.ms.hhrr.employees.dtos.EmployeeDto;
 import com.kuroshan.ms.hhrr.employees.models.Employee;
 import com.kuroshan.ms.hhrr.employees.repositories.EmployeeRepository;
 import com.kuroshan.ms.hhrr.employees.services.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,11 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
+@Slf4j
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -35,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private ModelMapper modelMapper;
 
-    @Value("${api.support.ms-human-resources-areas.url:http://localhost:8080/ms-humanresources-areas/v1}")
+    @Value("${api.support.ms-human-resources-areas.url:http://localhost:8080/ms-hhrr-areas/v1/}")
     private String msHumanResourcesAreas;
 
     @Override
@@ -54,8 +53,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             EmployeeDto dto = modelMapper.map(optEmp.get(), EmployeeDto.class);
             Map vars = new HashMap();
             vars.put("id", optEmp.get().getDepartmentId());
-            DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "/departments/{id}", DepartmentDto.class, vars);
+
+            DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "departments/{id}", DepartmentDto.class, vars);
             //DepartmentDto dept = departmentClientRest.getDepartament(optEmp.get().getDepartmentId());
+
             dto.setDepartment(dept);
             return dto;
         }

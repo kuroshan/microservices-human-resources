@@ -22,6 +22,7 @@ public class EmployeeDto {
     private Time hireDate;
     private Long salary;
     private Long commissionPct;
+    private Long departmentId;
     private DepartmentDto department;
 
 }
