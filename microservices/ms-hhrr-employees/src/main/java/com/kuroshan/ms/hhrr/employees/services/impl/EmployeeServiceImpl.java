@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private ModelMapper modelMapper;
 
-    @Value("${api.support.ms-humanresources-areas.url:http://localhost:8080/ms-humanresources-areas/v1}")
+    @Value("${api.support.ms-human-resources-areas.url:http://localhost:8080/ms-humanresources-areas/v1}")
     private String msHumanResourcesAreas;
 
     @Override

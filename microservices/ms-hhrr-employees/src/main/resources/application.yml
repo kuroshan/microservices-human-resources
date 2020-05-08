@@ -15,8 +15,8 @@ spring:
 
 api:
   support:
-    ms-humanresources-areas:
-      url: http://localhost:8082/ms-humanresources-areas/v1
+    ms-human-resources-areas:
+      url: http://localhost:8082/ms-hhrr-areas/v1
 
 #ms-human-resources-areas:
 #  ribbon:

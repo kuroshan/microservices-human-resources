@@ -13,6 +13,11 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.Oracle10gDialect
 
+api:
+  support:
+    ms-human-resources-areas:
+      url: http://localhost:8081/v1/departments/
+
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
