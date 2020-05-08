@@ -4,7 +4,7 @@ server:
   port: 8082
 spring:
   application:
-    name: ms-human-resources-employees
+    name: ms-hhrr-employees
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/XE
     username: hr
