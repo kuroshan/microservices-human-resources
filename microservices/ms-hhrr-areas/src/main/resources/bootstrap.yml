@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-human-resources-areas
+    name: ms-hhrr-areas
   cloud:
     config:
       uri: http://localhost:8000
