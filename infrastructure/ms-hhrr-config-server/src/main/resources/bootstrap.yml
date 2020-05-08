@@ -10,3 +10,4 @@ spring:
           searchPaths: 
             - config/discovery-server
             - config/edge-service
+            - config/areas
