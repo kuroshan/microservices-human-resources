@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ms-hhrr-employees
+  cloud:
+    config:
+      uri: http://localhost:8000

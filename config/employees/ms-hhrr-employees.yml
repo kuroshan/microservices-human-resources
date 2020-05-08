@@ -1,0 +1,32 @@
+server:
+  servlet:
+    context-path: /v1
+  port: 8082
+spring:
+  application:
+    name: ms-human-resources-employees
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/XE
+    username: hr
+    password: hrpw
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8666/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 5000
