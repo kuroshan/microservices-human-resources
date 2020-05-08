@@ -25,7 +25,7 @@ public class EmployeeController {
         return employeeService.findAll();
     }
 
-    @HystrixCommand(fallbackMethod = "temporalGetEmployee")
+    //@HystrixCommand(fallbackMethod = "temporalGetEmployee")
     @GetMapping(value = "/{id}")
     public ResponseEntity<EmployeeDto> getEmployee(@PathVariable long id) {
         return new ResponseEntity<EmployeeDto>(employeeService.findById(id), HttpStatus.OK);

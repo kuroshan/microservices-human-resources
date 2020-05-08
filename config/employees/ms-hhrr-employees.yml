@@ -16,7 +16,7 @@ spring:
 api:
   support:
     ms-human-resources-areas:
-      url: http://localhost:8081/v1/departments/
+      url: http://localhost:8081/v1/
 
 eureka:
   instance:

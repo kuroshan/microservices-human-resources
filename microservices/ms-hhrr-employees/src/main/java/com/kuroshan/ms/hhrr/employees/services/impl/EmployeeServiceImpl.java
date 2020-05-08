@@ -52,10 +52,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         if (optEmp.isPresent()) {
             EmployeeDto dto = modelMapper.map(optEmp.get(), EmployeeDto.class);
-            //Map vars = new HashMap();
-            //vars.put("id", optEmp.get().getDepartmentId());
-            //DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "/departments/{id}", DepartmentDto.class, vars);
-            DepartmentDto dept = departmentClientRest.getDepartament(optEmp.get().getDepartmentId());
+            Map vars = new HashMap();
+            vars.put("id", optEmp.get().getDepartmentId());
+            DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "/departments/{id}", DepartmentDto.class, vars);
+            //DepartmentDto dept = departmentClientRest.getDepartament(optEmp.get().getDepartmentId());
             dto.setDepartment(dept);
             return dto;
         }
