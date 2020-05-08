@@ -6,4 +6,5 @@ spring:
       server:
         git:
           uri: https://github.com/kuroshan/microservices-human-resources
+          defaultLabel: develop
           searchPaths: config
