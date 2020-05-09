@@ -20,12 +20,12 @@ api:
       url: http://localhost:8081/v1/
 
 eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     serviceUrl:
       defaultZone: http://localhost:8666/eureka/
-
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  
 hystrix:
   command:
     default:
