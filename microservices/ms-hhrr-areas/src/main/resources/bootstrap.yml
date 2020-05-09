@@ -4,3 +4,10 @@ spring:
   cloud:
     config:
       uri: http://localhost:8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+

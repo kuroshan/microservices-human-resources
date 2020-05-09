@@ -6,12 +6,11 @@ import com.kuroshan.ms.hhrr.employees.dtos.EmployeeDto;
 import com.kuroshan.ms.hhrr.employees.models.Employee;
 import com.kuroshan.ms.hhrr.employees.repositories.EmployeeRepository;
 import com.kuroshan.ms.hhrr.employees.services.EmployeeService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
@@ -44,6 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @HystrixCommand(fallbackMethod = "temporalGetEmployee")
     @Transactional(readOnly = true)
     public EmployeeDto findById(long id) {
 
@@ -62,5 +62,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         return null;
+    }
+
+    private EmployeeDto temporalGetEmployee(long id) {
+        log.error("error de invocación");
+        return EmployeeDto.builder().employeeId(id).firstName("-").lastName("-").build();
     }
 }
