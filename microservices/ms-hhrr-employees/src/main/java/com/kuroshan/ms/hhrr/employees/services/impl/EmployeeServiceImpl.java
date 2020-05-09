@@ -34,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private ModelMapper modelMapper;
 
-    @Value("${api.support.ms-human-resources-areas.url:http://localhost:8080/ms-hhrr-areas/v1/}")
+    @Value("${api.support.ms-human-resources-areas.url:http://localhost:8080/ms-hhrr-areas/v1}")
     private String msHumanResourcesAreas;
 
     @Override
@@ -54,8 +54,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             Map vars = new HashMap();
             vars.put("id", optEmp.get().getDepartmentId());
 
-            DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "departments/{id}", DepartmentDto.class, vars);
-            //DepartmentDto dept = departmentClientRest.getDepartament(optEmp.get().getDepartmentId());
+            //DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "/departments/{id}", DepartmentDto.class, vars);
+            DepartmentDto dept = departmentClientRest.getDepartament(optEmp.get().getDepartmentId());
 
             dto.setDepartment(dept);
             return dto;

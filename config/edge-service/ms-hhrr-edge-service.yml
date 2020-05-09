@@ -9,10 +9,10 @@ eureka:
       defaultZone: http://localhost:8666/eureka/
 zuul:
   routes:
-    ms-hhrr-areas:
+    ms-human-resources-areas:
       service-id: ms-hhrr-areas
       path: /api/hhrr/areas/**
-    ms-hhrr-employees:
+    ms-human-resources-employees:
       service-id: ms-hhrr-employees
       path: /api/hhrr/employees/**
 hystrix:

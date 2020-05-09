@@ -2,6 +2,8 @@ package com.kuroshan.ms.hhrr.employees.dtos;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -9,7 +11,7 @@ import lombok.*;
 @Builder
 @EqualsAndHashCode
 @ToString
-public class LocationDto {
+public class LocationDto implements Serializable {
 
   private long locationId;
   private String streetAddress;

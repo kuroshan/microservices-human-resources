@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/XE
     username: hr
-    password: hr
+    password: hrpw
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
     database-platform: org.hibernate.dialect.Oracle10gDialect
@@ -16,7 +16,7 @@ spring:
 api:
   support:
     ms-human-resources-areas:
-      url: http://localhost:8082/ms-hhrr-areas/v1
+      url: http://localhost:43823/ms-hhrr-areas/v1
 
 #ms-human-resources-areas:
 #  ribbon:
