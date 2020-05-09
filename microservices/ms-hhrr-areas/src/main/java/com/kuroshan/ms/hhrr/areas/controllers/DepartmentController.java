@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RefreshScope
+@RefreshScope //solo para configuraciones custom
 @Slf4j
 @RestController
 @RequestMapping(value = "/departments")

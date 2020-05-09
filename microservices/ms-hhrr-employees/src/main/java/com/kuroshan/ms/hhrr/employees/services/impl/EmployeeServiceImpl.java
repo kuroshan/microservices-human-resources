@@ -51,10 +51,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         if (optEmp.isPresent()) {
             EmployeeDto dto = modelMapper.map(optEmp.get(), EmployeeDto.class);
-            Map vars = new HashMap();
-            vars.put("id", optEmp.get().getDepartmentId());
-
+            //Map vars = new HashMap();
+            //vars.put("id", optEmp.get().getDepartmentId());
             //DepartmentDto dept = restTemplate.getForObject(msHumanResourcesAreas + "/departments/{id}", DepartmentDto.class, vars);
+
             DepartmentDto dept = departmentClientRest.getDepartament(optEmp.get().getDepartmentId());
 
             dto.setDepartment(dept);
@@ -66,6 +66,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeDto temporalGetEmployee(long id) {
         log.error("error de invocación");
-        return EmployeeDto.builder().employeeId(id).firstName("-").lastName("-").build();
+
+        Optional<Employee> optEmp = employeeRepository.findById(id);
+        EmployeeDto dto = modelMapper.map(optEmp.get(), EmployeeDto.class);
+        dto.setDepartment(DepartmentDto.builder().departmentId(optEmp.get().getDepartmentId()).build());
+
+        return dto;
     }
 }
