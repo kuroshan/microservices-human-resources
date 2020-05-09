@@ -1,7 +1,3 @@
-server:
-  servlet:
-    context-path: /v1
-  port: 8082
 spring:
   application:
     name: ms-hhrr-employees
@@ -12,6 +8,11 @@ spring:
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
     database-platform: org.hibernate.dialect.Oracle10gDialect
+
+server:
+  servlet:
+    context-path: /v1
+  port: 8082
 
 api:
   support:
