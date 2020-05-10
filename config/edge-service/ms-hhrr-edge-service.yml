@@ -19,6 +19,9 @@ zuul:
     ms-human-resources-employees:
       service-id: ms-hhrr-employees
       path: /api/hhrr/employees/**
+    mms-human-resources-users:
+      service-id: ms-hhrr-users
+      path: /api/hhrr/users/**
 
 hystrix:
   command:

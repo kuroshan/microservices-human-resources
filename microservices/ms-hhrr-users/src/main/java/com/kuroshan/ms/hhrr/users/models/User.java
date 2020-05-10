@@ -34,6 +34,12 @@ public class User implements Serializable {
   private Boolean enabled;
 
   @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+      name = "users_to_roles",
+      joinColumns = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "role_id"),
+      uniqueConstraints = { @UniqueConstraint(columnNames = {"user_id", "role_id"})}
+  )
   private List<Role> roles;
 
 }
