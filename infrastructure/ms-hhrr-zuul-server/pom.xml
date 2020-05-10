@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kuroshan.ms.hhrr</groupId>
-	<artifactId>edge-service</artifactId>
+	<artifactId>zuul-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Edge Service</name>
-	<description>Human Resource Edge Service</description>
+	<name>Zuul Server</name>
+	<description>Human Resource Zuul Server</description>
 
 	<properties>
 		<java.version>1.8</java.version>

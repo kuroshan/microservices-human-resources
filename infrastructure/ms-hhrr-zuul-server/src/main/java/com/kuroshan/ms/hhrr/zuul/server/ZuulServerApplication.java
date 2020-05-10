@@ -1,4 +1,4 @@
-package com.kuroshan.ms.hhrr.edge.service;
+package com.kuroshan.ms.hhrr.zuul.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableEurekaClient
 @EnableZuulProxy
 @SpringBootApplication
-public class EdgeServiceApplication {
+public class ZuulServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EdgeServiceApplication.class, args);
+		SpringApplication.run(ZuulServerApplication.class, args);
 	}
 
 }

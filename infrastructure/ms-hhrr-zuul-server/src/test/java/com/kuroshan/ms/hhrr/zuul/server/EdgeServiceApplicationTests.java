@@ -1,4 +1,4 @@
-package com.kuroshan.ms.hhrr.edge.service;
+package com.kuroshan.ms.hhrr.zuul.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
