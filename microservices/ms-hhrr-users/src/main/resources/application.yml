@@ -6,9 +6,3 @@ server:
   servlet:
     context-path: /ms-hhrr-users/v1
   port: ${PORT:0}
-
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: debug
