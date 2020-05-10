@@ -31,3 +31,9 @@ hystrix:
 ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info
