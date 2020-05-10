@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ms-hhrr-users
+
+server:
+  servlet:
+    context-path: /v1
+  port: 8083
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8666/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
